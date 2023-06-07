@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="User">
+	
+	<insert id="join" parameterType="userdto">
+		INSERT INTO "USER" values(#{userid}, #{userpw}, #{username}, #{userphone}, #{zipcode}, #{addr}, #{addrdetail}, #{addretc}, 0, user_seq.nextval)
+	</insert>
+	
+	<select id="login" parameterType="hashmap" resultType="_int">
+		SELECT count(*) FROM "USER" WHERE USERID = #{userid} AND USERPW = #{userpw}
+	</select>
+
+	<select id="checkId" parameterType="string" resultType="_int">
+		SELECT count(*) FROM "USER" WHERE USERID = #{userid}
+	</select>
+	
+	<update id="loginStatusChangeToLogin" parameterType="string">
+		update "USER" set loginstatus = 1 WHERE userid = #{userid}
+	</update>
+	
+	<select id="userIsLogin" parameterType="string" resultType="userdto">
+		SELECT * FROM "USER" WHERE userid = #{userid}
+	</select>
+	
+	
+</mapper>
