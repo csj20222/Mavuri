@@ -1,13 +1,18 @@
-# Node.js 설치
-
+# 💾 Node.js 설치
+### 1. 공식사이트
 - https://nodejs.org/en
 
 ![](https://velog.velcdn.com/images/csj20222/post/02583f9d-789c-41e4-bc2a-3259a612c106/image.png)
 - 공식 사이트에 들어가서 현재 사용중인 OS에 맞는 LTS버전(현 20.10.0) 파일 다운받기
+
+(LTS는 'Long Term Support'의 줄임말로 'Node.js 커뮤니티에 의해 장기간 지원받을 수 있는 버전'이라는 뜻입니다.)
+
 ---
+### 2. 설치완료
 ![](https://velog.velcdn.com/images/csj20222/post/1833502d-0506-455c-a22f-b9f7124c8b2f/image.png)
 - 설치하기
 ---
+### 3. 버전확인 및 작동확인
 ![](https://velog.velcdn.com/images/csj20222/post/008f3188-feee-460e-b717-dc54e6897c59/image.png)
 - 설치후 터미널에 node -v 입력하면 현재 버전을 알려준다.
 ```
@@ -24,7 +29,7 @@ Hello World
 ---
 ---
 
-# npm package 만들기
+# 📦 npm package 생성
 - npm은 JavaScript 런타입 환경인 node.js의 기본 패키지 관리자이다.
 - 터미널에서 프로젝트를 만들 폴더로 경로를 이동해준다.
 ![](https://velog.velcdn.com/images/csj20222/post/9ebff1b3-202a-481d-baca-a0aa64606ebc/image.png)
@@ -36,25 +41,25 @@ Is this OK? 라는 문구가 나올때까지 엔터를 눌러준후 yes 입력�
 
 ---
 ---
-# Express 설치
+# 💾 Express 설치
 
 ![](https://velog.velcdn.com/images/csj20222/post/7beb1a10-4064-4f2c-9fab-673783c82d78/image.png)
-- 터미널에 npm install express --save 입력하기
----
 ![](https://velog.velcdn.com/images/csj20222/post/68af223f-5b4d-4dd0-a009-ff9c704e4ded/image.png)
+- 터미널에 npm install express --save 입력하기
 - 뒤에 --save를 붙여주는 이유는 package.json 코드중 dependencies 부분에 설치한 express가 자동으로 추가가 되기 때문이다.
 ---
 ---
-# express 앱 만들기
+# 💻 Express 앱 만들기
+### 1. 공식사이트 
 https://expressjs.com/ko/starter/hello-world.html
 ![](https://velog.velcdn.com/images/csj20222/post/f7af3d05-e05f-40d6-bc03-3bb660bd14da/image.png)
 ~~~javascript
 const express = require('express')	// 다운받은 express 모듈을 가져온다.
-const app = express()				// 가져온 express 모듈의 function을 이용해서 새로운 express 앱(=app)을 만든다.
-const port = 5000					// 포트는 본인 마음대로 설정한다.
+const app = express()			// 가져온 express 모듈의 function을 이용해서 새로운 express 앱(=app)을 만든다.
+const port = 5000			// 포트는 본인 마음대로 설정한다.
 
 app.get('/', (req, res) => {		// express 앱을 넣고 root directory에 오면
-  res.send('Hello World!')			// "Hello World!"를 출력되게 해준다.
+  res.send('Hello World!')		// "Hello World!"를 출력되게 해준다.
 })
 
 app.listen(port, () => {
@@ -64,12 +69,13 @@ app.listen(port, () => {
 - express 공식사이트에 들어가면 hello world 예제가 있다.
 - 복사해서 index.js 파일에 붙여넣기 해준다.
 ---
+### 2. 스크립트 명령어 추가
 ![](https://velog.velcdn.com/images/csj20222/post/95496da2-283c-4bb1-ae50-397c162ad1c3/image.png)
 - package.json 파일의 scripts 부분에 "start": "node index.js" 를 추가해준다.
 - 저장 필수!!
 ---
 ---
-# 로컬 서버열기
+### 3. 로컬 서버열기
 ![](https://velog.velcdn.com/images/csj20222/post/4d7edad5-88db-4d68-aaa5-a796c8408b75/image.png)
 - 터미널에서 프로젝트 경로로 들어가서
 npm run start 를 입력해주면 설정해둔 5000포트로 로컬 서버가 열린다!
