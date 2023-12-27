@@ -40,22 +40,22 @@ Express 라우트 메서드 역시 get으로 작성된 처리 코드가 있어�
 const express = require('express');
 const app = express();
 
-app.listen(3000, () => {
-  // 3000번 포트로 웹 서버 실행
-  consol.log("Server started. port 3000");
+app.listen(5000, () => {
+  // 5000번 포트로 웹 서버 실행
+  consol.log("Server started. port 5000");
 });
 
-// 클라이언트 HTTP 요청 메서드 Get 방식으로 'host:3000/practice'를 호출했을 경우
+// 클라이언트 HTTP 요청 메서드 Get 방식으로 'host:5000/practice'를 호출했을 경우
 app.get("/practice", (req, res) => {
   res.send("get 요청에 대한 응답");
 });
 
-// 클라이언트 HTTP 요청 메서드 Post 방식으로 'host:3000/practice'를 호출했을 경우
+// 클라이언트 HTTP 요청 메서드 Post 방식으로 'host:5000/practice'를 호출했을 경우
 app.post("/practice", (req, res) => {
   res.send("post 요청에 대한 응답");
 });
 
-// 클라이언트 HTTP 요청 메서드 종류에 상관없는 방식으로 'host:3000/practice'를 호출했을 경우
+// 클라이언트 HTTP 요청 메서드 종류에 상관없는 방식으로 'host:5000/practice'를 호출했을 경우
 app.all("/practice", (req, res) => {
   res.send("모든 요청에 대한 응답");
 });
@@ -221,7 +221,7 @@ const app = express();
 app.use(express.json({
   limit: '50mb;	// 최대 50 메가
 })); // 클라이언트 요청 body를 json으로 파싱 처리
-app.listen(3000, () => {
+app.listen(5000, () => {
   // 5000번 포트로 웹 서버 실행
   consol.log('Server starte. port 5000.');
 })
